@@ -17,6 +17,7 @@ description: PowerSwitchButton  is a versatile and customizable switch widget fo
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
 version: 0.0.1
+homepage: https://github.com/WalidAhmed90/PowerSwitchButton
 
 environment:
   sdk: '>=2.19.3 <3.0.0'
