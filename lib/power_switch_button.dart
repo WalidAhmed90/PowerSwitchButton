@@ -1,22 +1,36 @@
 library power_switch_button;
 
-import 'dart:ui';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'dashed_circle_painter.dart';
 
-
+/// A customizable switch button with animated on/off states and dashed border.
 class PowerSwitchButton extends StatefulWidget {
+  /// The size of the switch button.
   final double size;
+
+  /// The stroke width of the dashed circle.
   final double strokeWidth;
+
+  /// The width of each dash in the dashed circle.
   final double dashWidth;
+
+  /// The space between each dash in the dashed circle.
   final double dashSpace;
+
+  /// The color of the switch when it is in the 'on' position.
   final Color onColor;
+
+  /// The color of the switch when it is in the 'off' position.
   final Color offColor;
+
+  /// The background color of the switch.
   final Color backgroundColor;
+
+  /// Callback that gets called when the switch is toggled.
   final ValueChanged<bool> onToggle;
 
+  /// Creates a PowerSwitchButton widget.
   PowerSwitchButton({
     required this.size,
     required this.strokeWidth,
@@ -49,6 +63,7 @@ class _PowerSwitchButtonState extends State<PowerSwitchButton> with SingleTicker
     );
   }
 
+  /// Toggles the switch state and calls the onToggle callback.
   void _toggleSwitch() {
     setState(() {
       isOn = !isOn;

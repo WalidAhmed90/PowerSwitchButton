@@ -1,12 +1,22 @@
-
 import 'package:flutter/cupertino.dart';
 
+/// A custom painter that draws a dashed circle.
 class DashedCirclePainter extends CustomPainter {
+  /// The stroke width of the dashed circle, expressed as a percentage of the size.
   final double strokeWidth;
+
+  /// The width of each dash in the dashed circle, expressed as a percentage of the size.
   final double dashWidth1;
+
+  /// The space between each dash in the dashed circle, expressed as a percentage of the size.
   final double dashSpace1;
+
+  /// The color of the dashed circle.
   final Color strokeColor;
 
+  /// Creates an instance of [DashedCirclePainter].
+  ///
+  /// The [strokeWidth], [dashWidth1], [dashSpace1], and [strokeColor] must be provided.
   DashedCirclePainter({
     required this.strokeWidth,
     required this.dashWidth1,
