@@ -12,8 +12,8 @@ PowerSwitchButton  is a versatile and customizable switch widget for Flutter tha
 
 ## Demo
 
+![Screen_recording_20240801_143600-ezgif com-resize](https://github.com/user-attachments/assets/fb54ed56-6715-4006-adc9-908b869baa4d)
 
-![Screen_recording_20240801_143600-ezgif com-optimize](https://github.com/user-attachments/assets/0ee23477-80d5-4f8e-8b05-899ed79979eb)
 
 ## Installation
 
