@@ -87,7 +87,7 @@ class MyApp extends StatelessWidget {
 ## License
 
 This package is licensed under the MIT License. See the 
-![LICENSE]([https://github.com/user-attachments/assets/0ee23477-80d5-4f8e-8b05-899ed79979eb](https://github.com/WalidAhmed90/PowerSwitchButton/blob/main/LICENSE)) file for more details.
+[LICENSE](https://github.com/WalidAhmed90/PowerSwitchButton/blob/main/LICENSE) file for more details.
 
 
 
