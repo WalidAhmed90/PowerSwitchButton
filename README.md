@@ -21,7 +21,7 @@ Add the following to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  power_switch_button: ^0.0.1
+  power_switch_button: ^0.0.2
 ```
 
 
@@ -60,6 +60,7 @@ class MyApp extends StatelessWidget {
             onColor: Colors.red,
             offColor: Colors.grey,
             backgroundColor: Colors.black,
+            iconColor: Colors.black,
             onToggle: (bool isOn) {
               print('Switch is ${isOn ? 'On' : 'Off'}');
             },
@@ -81,6 +82,7 @@ class MyApp extends StatelessWidget {
 - **onColor:** The color of the switch when it is in the 'on' position (e.g., Colors.red).
 - **offColor:** The color of the switch when it is in the 'off' position (e.g., Colors.grey).
 - **backgroundColor:** The color of the switch background (e.g., Colors.black).
+- **iconColor:** The color of the icon (e.g., Colors.black).
 - **onToggle:** A callback function that receives the switch's state (true for on, false for off).
 
 
