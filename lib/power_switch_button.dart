@@ -27,6 +27,9 @@ class PowerSwitchButton extends StatefulWidget {
   /// The background color of the switch.
   final Color backgroundColor;
 
+  /// The color of the power icon.
+  final Color iconColor;
+
   /// Callback that gets called when the switch is toggled.
   final ValueChanged<bool> onToggle;
 
@@ -39,6 +42,7 @@ class PowerSwitchButton extends StatefulWidget {
     required this.onColor,
     required this.offColor,
     required this.backgroundColor,
+    required this.iconColor,
     required this.onToggle,
   });
 
@@ -117,7 +121,7 @@ class _PowerSwitchButtonState extends State<PowerSwitchButton> with SingleTicker
                 child: Icon(
                   Icons.power_settings_new,
                   size: innerCircleSize * 0.5,
-                  color: Colors.black,
+                  color: widget.iconColor,
                 ),
               ),
             ),

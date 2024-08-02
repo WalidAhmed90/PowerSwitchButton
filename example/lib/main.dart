@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
             onColor: Colors.red,
             offColor: Colors.grey,
             backgroundColor: Colors.black,
+            iconColor: Colors.black54,
             onToggle: (bool isOn) {
               print('Switch is ${isOn ? 'On' : 'Off'}');
             },
