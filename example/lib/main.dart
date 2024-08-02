@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:power_switch_button/power_switch_button.dart';
 
-
 void main() {
   runApp(MyApp());
 }

@@ -36,12 +36,14 @@ class DashedCirclePainter extends CustomPainter {
     final dashWidth = size.width * (dashWidth1 / 100);
     final dashSpace = size.width * (dashSpace1 / 100);
     final dashCount = (circumference / (dashWidth + dashSpace)).floor();
-    final adjustedDashSpace = (circumference - (dashWidth * dashCount)) / dashCount;
+    final adjustedDashSpace =
+        (circumference - (dashWidth * dashCount)) / dashCount;
 
     for (int i = 0; i < dashCount; i++) {
       final startAngle = (i * (dashWidth + adjustedDashSpace)) / radius;
       canvas.drawArc(
-        Rect.fromCircle(center: Offset(size.width / 2, size.height / 2), radius: radius),
+        Rect.fromCircle(
+            center: Offset(size.width / 2, size.height / 2), radius: radius),
         startAngle,
         dashWidth / radius,
         false,

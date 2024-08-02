@@ -50,7 +50,8 @@ class PowerSwitchButton extends StatefulWidget {
   _PowerSwitchButtonState createState() => _PowerSwitchButtonState();
 }
 
-class _PowerSwitchButtonState extends State<PowerSwitchButton> with SingleTickerProviderStateMixin {
+class _PowerSwitchButtonState extends State<PowerSwitchButton>
+    with SingleTickerProviderStateMixin {
   bool isOn = false;
   late AnimationController _controller;
   late Animation<double> _scaleAnimation;

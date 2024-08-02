@@ -1,4 +1,8 @@
-## [0.0.2] - Aug 2, 2024
+## [0.0.3] - Aug 2, 2024
+
+* Optimise code 
+
+ ## [0.0.2] - Aug 2, 2024
 
 * Added icon color change option as well.
 

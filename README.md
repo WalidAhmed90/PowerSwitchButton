@@ -21,7 +21,7 @@ Add the following to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  power_switch_button: ^0.0.2
+  power_switch_button: ^0.0.3
 ```
 
 
