@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:power_switch_button/enum.dart';
 import 'package:power_switch_button/power_switch_button.dart';
 
 void main() {
@@ -14,17 +15,30 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.white,
         body: Center(
           child: PowerSwitchButton(
-            size: 200,
-            strokeWidth: 4,
-            dashWidth: 1,
-            dashSpace: 2,
-            onColor: Colors.red,
-            offColor: Colors.grey,
-            backgroundColor: Colors.black,
-            iconColor: Colors.black54,
-            onToggle: (bool isOn) {
-              print('Switch is ${isOn ? 'On' : 'Off'}');
+            size: 250.0,
+            strokeWidth: 3.0,
+            dashWidth: 1.0,
+            dashSpace: 2.0,
+            onColor: Colors.green,
+            offColor: Colors.red,
+            backgroundColor: Colors.grey[200]!,
+            iconColor: Colors.white,
+            onToggle: (bool value) {
+              print('Switch is: $value');
             },
+            shape: Shape.SQUARE,
+            borderRadius: 10,
+            customIcon: Icons.power_settings_new,  // Optional: custom icon
+            label: 'Power Switch',  // Optional: label text
+            disabled: false,  // Optional: disabled state
+            onGradient: LinearGradient(  // Optional: on gradient colors
+              colors: [Colors.green, Colors.lightGreen],
+            ),
+            offGradient: LinearGradient(  // Optional: off gradient colors
+              colors: [Colors.red, Colors.orange],
+            ),
+            animationDuration: Duration(milliseconds: 300),  // Optional: custom animation duration
+            animationCurve: Curves.bounceInOut,  // Optional: custom animation curve
           ),
         ),
       ),
