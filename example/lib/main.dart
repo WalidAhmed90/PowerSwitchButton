@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: PowerSwitchButton(
             size: 250.0,
-            strokeWidth: 3.0,
+            strokeWidth: 6.0,
             dashWidth: 1.0,
             dashSpace: 2.0,
             onColor: Colors.green,
@@ -27,18 +27,22 @@ class MyApp extends StatelessWidget {
               print('Switch is: $value');
             },
             shape: Shape.SQUARE,
-            borderRadius: 10,
-            customIcon: Icons.power_settings_new,  // Optional: custom icon
-            label: 'Power Switch',  // Optional: label text
-            disabled: false,  // Optional: disabled state
-            onGradient: LinearGradient(  // Optional: on gradient colors
+            borderRadius: 20,
+            customIcon: Icons.power_settings_new, // Optional: custom icon
+            label: 'Power Switch', // Optional: label text
+            disabled: false, // Optional: disabled state
+            onGradient: const LinearGradient(
+              // Optional: on gradient colors
               colors: [Colors.green, Colors.lightGreen],
             ),
-            offGradient: LinearGradient(  // Optional: off gradient colors
+            offGradient: const LinearGradient(
+              // Optional: off gradient colors
               colors: [Colors.red, Colors.orange],
             ),
-            animationDuration: Duration(milliseconds: 300),  // Optional: custom animation duration
-            animationCurve: Curves.bounceInOut,  // Optional: custom animation curve
+            animationDuration: const Duration(
+                milliseconds: 300), // Optional: custom animation duration
+            animationCurve:
+                Curves.bounceInOut, // Optional: custom animation curve
           ),
         ),
       ),

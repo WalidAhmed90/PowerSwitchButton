@@ -132,9 +132,10 @@ class _PowerSwitchButtonState extends State<PowerSwitchButton>
             shape: widget.shape == Shape.CIRCLE
                 ? BoxShape.circle
                 : BoxShape.rectangle,
-            borderRadius: widget.shape == Shape.SQUARE && widget.borderRadius != null
-                ? BorderRadius.circular(widget.borderRadius!)
-                : null,
+            borderRadius:
+                widget.shape == Shape.SQUARE && widget.borderRadius != null
+                    ? BorderRadius.circular(widget.borderRadius!)
+                    : null,
           ),
         ),
         CustomPaint(
@@ -164,15 +165,16 @@ class _PowerSwitchButtonState extends State<PowerSwitchButton>
                 shape: widget.shape == Shape.CIRCLE
                     ? BoxShape.circle
                     : BoxShape.rectangle,
-                borderRadius: widget.shape == Shape.SQUARE && widget.borderRadius != null
-                    ? BorderRadius.circular(widget.borderRadius!)
-                    : null,
+                borderRadius:
+                    widget.shape == Shape.SQUARE && widget.borderRadius != null
+                        ? BorderRadius.circular(widget.borderRadius!)
+                        : null,
                 gradient: isOn ? widget.onGradient : widget.offGradient,
                 color: widget.disabled
                     ? Colors.grey.withOpacity(0.5)
                     : isOn
-                    ? widget.onColor
-                    : widget.offColor,
+                        ? widget.onColor
+                        : widget.offColor,
               ),
               child: Center(
                 child: Column(

@@ -1,3 +1,1 @@
-
-
 enum Shape { CIRCLE, SQUARE }

@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'enum.dart';
@@ -43,12 +42,14 @@ class DashedShapePainter extends CustomPainter {
     final dashWidth = size.width * (dashWidth1 / 100);
     final dashSpace = size.width * (dashSpace1 / 100);
     final dashCount = (circumference / (dashWidth + dashSpace)).floor();
-    final adjustedDashSpace = (circumference - (dashWidth * dashCount)) / dashCount;
+    final adjustedDashSpace =
+        (circumference - (dashWidth * dashCount)) / dashCount;
 
     for (int i = 0; i < dashCount; i++) {
       final startAngle = (i * (dashWidth + adjustedDashSpace)) / radius;
       canvas.drawArc(
-        Rect.fromCircle(center: Offset(size.width / 2, size.height / 2), radius: radius),
+        Rect.fromCircle(
+            center: Offset(size.width / 2, size.height / 2), radius: radius),
         startAngle,
         dashWidth / radius,
         false,
@@ -61,12 +62,8 @@ class DashedShapePainter extends CustomPainter {
     final radius = borderRadius ?? 0.0;
     final rect = Rect.fromLTWH(0, 0, size.width, size.width);
     final rrect = RRect.fromRectAndRadius(rect, Radius.circular(radius));
-    final perimeter = 2 * (size.width + size.width);
     final dashLength = size.width * (dashWidth1 / 100);
     final dashSpace = size.width * (dashSpace1 / 100);
-    final dashCount = (perimeter / (dashLength + dashSpace)).floor();
-    final dashGap = (perimeter - (dashLength * dashCount)) / dashCount;
-
     Path path = Path();
 
     // Draw each side with dashed lines
@@ -75,47 +72,75 @@ class DashedShapePainter extends CustomPainter {
     canvas.drawPath(path, paint);
   }
 
-  void _addDashedPath(Path path, RRect rrect, double dashLength, double dashSpace) {
+  void _addDashedPath(
+      Path path, RRect rrect, double dashLength, double dashSpace) {
     final rect = rrect;
     final radius = rrect.trRadiusX;
 
     // Helper function to add dashed lines
-    void addDashedSegment(Path path, Offset start, Offset end, double dashLength, double dashSpace) {
+    void addDashedSegment(Path path, Offset start, Offset end,
+        double dashLength, double dashSpace) {
       final length = (end - start).distance;
       final dashCount = (length / (dashLength + dashSpace)).floor();
       final dashGap = (length - (dashLength * dashCount)) / dashCount;
 
       for (int i = 0; i < dashCount; i++) {
-        final startOffset = start + (end - start) * (i * (dashLength + dashGap)) / length;
-        final endOffset = start + (end - start) * ((i * (dashLength + dashGap)) + dashLength) / length;
+        final startOffset =
+            start + (end - start) * (i * (dashLength + dashGap)) / length;
+        final endOffset = start +
+            (end - start) *
+                ((i * (dashLength + dashGap)) + dashLength) /
+                length;
         path.moveTo(startOffset.dx, startOffset.dy);
         path.lineTo(endOffset.dx, endOffset.dy);
       }
     }
 
     // Top side
-    addDashedSegment(path, Offset(rect.left + radius, rect.top), Offset(rect.right - radius, rect.top), dashLength, dashSpace);
+    addDashedSegment(path, Offset(rect.left + radius, rect.top),
+        Offset(rect.right - radius, rect.top), dashLength, dashSpace);
     // Right side
-    addDashedSegment(path, Offset(rect.right, rect.top + radius), Offset(rect.right, rect.bottom - radius), dashLength, dashSpace);
+    addDashedSegment(path, Offset(rect.right, rect.top + radius),
+        Offset(rect.right, rect.bottom - radius), dashLength, dashSpace);
     // Bottom side
-    addDashedSegment(path, Offset(rect.right - radius, rect.bottom), Offset(rect.left + radius, rect.bottom), dashLength, dashSpace);
+    addDashedSegment(path, Offset(rect.right - radius, rect.bottom),
+        Offset(rect.left + radius, rect.bottom), dashLength, dashSpace);
     // Left side
-    addDashedSegment(path, Offset(rect.left, rect.bottom - radius), Offset(rect.left, rect.top + radius), dashLength, dashSpace);
+    addDashedSegment(path, Offset(rect.left, rect.bottom - radius),
+        Offset(rect.left, rect.top + radius), dashLength, dashSpace);
 
     // Add rounded corners
-    void addDashedArc(Path path, Rect rect, double startAngle, double sweepAngle) {
+    void addDashedArc(
+        Path path, Rect rect, double startAngle, double sweepAngle) {
       path.addArc(rect, startAngle, sweepAngle);
     }
 
     // Top-left corner
-    addDashedArc(path, Rect.fromLTWH(rect.left, rect.top, radius * 2, radius * 2), pi, pi / 2);
+    addDashedArc(path,
+        Rect.fromLTWH(rect.left, rect.top, radius * 2, radius * 2), pi, pi / 2);
     // Top-right corner
-    addDashedArc(path, Rect.fromLTWH(rect.right - radius * 2, rect.top, radius * 2, radius * 2), -pi / 2, pi / 2);
+    addDashedArc(
+        path,
+        Rect.fromLTWH(
+            rect.right - radius * 2, rect.top, radius * 2, radius * 2),
+        -pi / 2,
+        pi / 2);
     // Bottom-right corner
-    addDashedArc(path, Rect.fromLTWH(rect.right - radius * 2, rect.bottom - radius * 2, radius * 2, radius * 2), 0, pi / 2);
+    addDashedArc(
+        path,
+        Rect.fromLTWH(rect.right - radius * 2, rect.bottom - radius * 2,
+            radius * 2, radius * 2),
+        0,
+        pi / 2);
     // Bottom-left corner
-    addDashedArc(path, Rect.fromLTWH(rect.left , rect.bottom - radius * 2, radius * 2, radius * 2), pi / 2, pi / 2);
+    addDashedArc(
+        path,
+        Rect.fromLTWH(
+            rect.left, rect.bottom - radius * 2, radius * 2, radius * 2),
+        pi / 2,
+        pi / 2);
   }
+
   @override
   bool shouldRepaint(CustomPainter oldDelegate) => false;
 }
