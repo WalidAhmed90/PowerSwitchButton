@@ -1,3 +1,8 @@
+## [0.0.5] - Aug 7, 2024
+
+* Added an intermediate loading state feature. When the button is pressed and initially off, it shows a loading state with a rotating outer dash circle until the next status is provided (success or failure). If successful, the button moves to the next state (on or off); if failure, it returns to the previous state.
+
+
 ## [0.0.4] - Aug 5, 2024
 
 * customIcon: An optional custom icon to display in the switch. 
