@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
                 Colors.grey[200]!, // Required: Background color of the switch
             iconColor:
                 Colors.white, // Required: Color of the icon in the switch
+            initialValue: true, // Button will start in the "on" state
             onToggle: (bool value) {
               // Required: Callback function that is triggered when the switch is toggled
               print(value); // Prints the switch state (on/off) to the console

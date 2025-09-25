@@ -68,6 +68,9 @@ class PowerSwitchButton extends StatefulWidget {
   /// The text to display during the loading state.
   final String? loadingText;
 
+  /// The initial state of the switch (true for on, false for off).
+  final bool initialValue;
+
   /// Creates a PowerSwitchButton widget.
   PowerSwitchButton({
     required this.size,
@@ -90,6 +93,7 @@ class PowerSwitchButton extends StatefulWidget {
     this.animationCurve = Curves.easeInOut,
     this.loadingCallback,
     this.loadingText, // Default is not loading
+    this.initialValue = false, // Default initial state is off
   });
 
   @override
@@ -98,7 +102,7 @@ class PowerSwitchButton extends StatefulWidget {
 
 class _PowerSwitchButtonState extends State<PowerSwitchButton>
     with TickerProviderStateMixin {
-  bool isOn = false;
+  late bool isOn;
   bool isLoading = false;
   late AnimationController _controller;
   late Animation<double> _scaleAnimation;
@@ -109,6 +113,9 @@ class _PowerSwitchButtonState extends State<PowerSwitchButton>
   @override
   void initState() {
     super.initState();
+    
+    /// Initialize the switch state with the provided initial value
+    isOn = widget.initialValue;
 
     /// Initialize the scale controller and animation for button press effect
     _controller = AnimationController(

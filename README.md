@@ -14,6 +14,7 @@ PowerSwitchButton  is a versatile and customizable switch widget for Flutter tha
 - **Shape Options:** Choose between different shapes for the switch button. 
 - **Animation Customization:** Adjust the animation duration and curve.
 - **Loading State:** Show an intermediate loading state with animation while the switch is processing.
+- **Initial State Control:** Set the initial state of the switch to match your device's actual state.
 
 
 
@@ -34,7 +35,7 @@ Add the following to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  power_switch_button: ^0.0.5
+  power_switch_button: ^0.0.6
 ```
 
 
@@ -82,6 +83,7 @@ class MyApp extends StatelessWidget {
             Colors.grey[200]!, // Required: Background color of the switch
             iconColor:
             Colors.white, // Required: Color of the icon in the switch
+            initialValue: true, // Optional: Initial state of the switch (default: false)
             onToggle: (bool value) {
               // Required: Callback function that is triggered when the switch is toggled
               print(value); // Prints the switch state (on/off) to the console
@@ -149,6 +151,7 @@ class MyApp extends StatelessWidget {
 - **onToggle:** A callback function that receives the switch's state (true for on, false for off).
 - **loadingCallback:** A function to be called when the switch is loading, returning a Future<bool> indicating success or failure (optional). 
 - **loadingText:** Text to display while the switch is in the loading state (optional).
+- **initialValue:** The initial state of the switch (true for on, false for off). Defaults to false for backward compatibility.
 
 
 

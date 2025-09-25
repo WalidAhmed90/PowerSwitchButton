@@ -1,3 +1,7 @@
+## [0.0.6] - Current
+
+* Added `initialValue` parameter to allow users to set the initial state of the switch button. This addresses the issue where users couldn't set the button to reflect the actual state of the device they're controlling. The parameter defaults to `false` for backward compatibility.
+
 ## [0.0.5] - Aug 7, 2024
 
 * Added an intermediate loading state feature. When the button is pressed and initially off, it shows a loading state with a rotating outer dash circle until the next status is provided (success or failure). If successful, the button moves to the next state (on or off); if failure, it returns to the previous state.
